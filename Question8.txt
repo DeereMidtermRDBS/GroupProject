@@ -1,0 +1,11 @@
+SELECT  w.LASTNAME, w.FIRSTNAME , a.RATING 
+FROM WORKER w, PROJECT p, ASSIGN a
+WHERE p.projno = a.projno AND a.empid = w.empid  
+AND a.projno IN
+                (SELECT PROJNO
+                 FROM PROJECT 
+                 WHERE p.projmgrid IN
+                 (SELECT EMPID
+                  FROM WORKER
+                  WHERE lastname = 'Burns' AND firstname = 'Michael')))
+ORDER BY w.lastname, w.FIRSTNAME ASC

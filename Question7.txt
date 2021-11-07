@@ -1,0 +1,6 @@
+SELECT w.LASTNAME, w.FIRSTNAME, d.departmentname
+FROM WORKER w , DEPT d   
+WHERE w.departmentid= d.departmentid AND  EMPID IN
+                                                                                         (SELECT EMPID
+                                                                                          FROM ASSIGN 
+                                                                                          WHERE PROJNO = 1019 );

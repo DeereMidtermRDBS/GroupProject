@@ -1,0 +1,4 @@
+CREATE VIEW WorkersAndProjects(projnumber, projname,woker_ID ,worker_lastname, worker_firstname)
+AS SELECT DISTINCT  p.projno, p.projname, a.empid, w.lastname ,w.firstname
+FROM DEPT d, WORKER w, PROJECT p, ASSIGN a 
+WHERE p.projno = a.projno AND w.empid = a.empid ;

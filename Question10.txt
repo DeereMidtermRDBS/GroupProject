@@ -1,0 +1,3 @@
+SELECT PROJNUMBER, PROJNAME 
+FROM workersandprojects
+WHERE woker_id= 101;
