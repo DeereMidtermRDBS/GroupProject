@@ -1,0 +1,4 @@
+SELECT projno, empid
+FROM assign
+WHERE rating is NULL
+ORDER BY projno

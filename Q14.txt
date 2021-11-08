@@ -1,0 +1,4 @@
+SELECT r.projnumber ,COUNT(r.projname)AS WorkersAssigned, SUM(a.hoursassigned) AS Hours 
+FROM workersandprojects r, ASSIGN a 
+ WHERE a.projno = r.projnumber AND a.empid = r.woker_id
+GROUP BY r.projnumber

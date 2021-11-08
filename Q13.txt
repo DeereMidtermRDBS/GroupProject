@@ -1,0 +1,3 @@
+SELECT DISTINCT projno, woker_ID, worker_lastname, worker_firstname 
+FROM PROJECT p, workersandprojects h
+WHERE p.projno = h.projnumber AND startdate > DATE '2021-09-01';

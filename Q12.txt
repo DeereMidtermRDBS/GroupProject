@@ -1,0 +1,1 @@
+UPDATE ASSIGN SET hoursassigned = 10 WHERE EMPID = 110 AND projno = 1019;

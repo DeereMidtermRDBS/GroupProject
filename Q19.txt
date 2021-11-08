@@ -1,0 +1,4 @@
+UPDATE project
+SET numemployeesassigned =
+ (SELECT COUNT(*) FROM assign
+WHERE project.projno = assign.projno

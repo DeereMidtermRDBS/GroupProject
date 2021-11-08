@@ -1,0 +1,19 @@
+1)
+create or replace TRIGGER UPDATE_DATA
+after INSERT 
+for each row
+begin
+update project
+set numemployeesassigned = numemployeesassigned+1
+where project.projno= :new.projno;
+END;
+
+2)
+create or replace TRIGGER UPDATE_DATA_ON_DELETE
+after DELETE ON assign
+for each row
+begin
+update project
+set numemployeesassigned = numemployeesassigned-1
+where project.projno= :old.projno;
+END;

@@ -1,0 +1,17 @@
+ALTER TABLE project
+ADD STATUS VARCHAR2(20 BYTE);
+UPDATE project
+SET STATUS = (case 
+when projno = 1001 then 'ACTIVE'
+when projno = 1005 then 'ACTIVE'
+when projno = 1019 then 'ACTIVE'
+when projno = 1025 then 'ACTIVE'
+when projno = 1030 then 'ACTIVE'
+when projno = 1031 then 'CANCELLED'
+when projno = 1032 then 'PLANNED'
+when projno = 1033 then 'COMPLETED'
+end)
+WHERE projno IN(1001,1005,1019, 1025,1030,1031,1032,1033);                                
+SELECT projno, status
+FROM  project
+WHERE status = 'ACTIVE'

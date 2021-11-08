@@ -1,0 +1,5 @@
+SELECT h.worker_lastname, h.worker_firstname, p.projmgrid
+ FROM workersandprojects h, PROJECT p ,WORKER w
+WHERE  h.projnumber = p.projno AND w.empid NOT IN 
+(SELECT woker_ID 
+ FROM workersandprojects);
